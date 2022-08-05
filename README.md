@@ -1,1 +1,1 @@
-# programing-c
+# computation-in-c

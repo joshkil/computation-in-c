@@ -6,6 +6,6 @@
 
 int main(){
 
-    printf("Hello World! - My name is Josh\n");
+    printf("Hello World!\n");
     return 0;
 }

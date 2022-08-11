@@ -238,9 +238,14 @@ int main (){
         printf("We can print a float as an integer: %i\n", (int) myfloat);
     }
 
-    for(int i = 0; i < 255; i++){
-        printf("%i : %c\n", i, i);
-    }
+    /*
+     * Any variable can be defined as a constant which means it cannot be changed 
+     * after it is assigned.
+    */
+    const int ci = 15;
+    /* If we wrote the statement below, the compiler would give us an error. 
+    ci = 20;
+    */
 
     return(0);
 }

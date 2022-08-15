@@ -19,55 +19,74 @@ struct List* createlist(){
     return newlist;
 }
 
-int addvalue(struct List* list, int val){
-    int success = 0;
-    if(list->size == 0){
-        struct Node* newnode = (struct Node*) malloc(sizeof(struct Node*));
-        newnode->val = val;
-        list->head = newnode;
-        list->size += 1;
-        success = 1;
-    }else{
-        struct Node* cur = list->head;
-        struct Node* prev = NULL;
-        while(cur){
-            if(val < cur->val) {
-                /* the value to insert goes before cur node  */
-                struct Node* newnode = (struct Node*) malloc(sizeof(struct Node*));
-                newnode->val = val;
-                if(prev){
-                    prev->next = newnode;
-                    newnode->next = cur;
-                }
-                else{
-                    /* special case: prev is NULL so we need to insert at the head. */
-                    list->head = newnode;
-                    newnode->next = cur;
-                }
-                success = 1;
-                break;
-            } 
-            else{
-                /* continue moving through the list */
-                prev = cur;
-                cur = cur->next;
-            }
-        }
-
-        if(!success){
-            /* we reached the end of the list, insert at tail */
-            struct Node* newnode = (struct Node*) malloc(sizeof(struct Node*));
-            newnode->val = val;
-            newnode->next = NULL;
-            prev->next = newnode;
+struct Node* findprev(struct List* list, int val){
+    struct Node* prev = NULL;
+    if(!list) return prev;
+    struct Node* cur = list->head;
+    while(cur){
+        if(val < cur->val) {
+            /* the value to insert goes before cur node  */
+            break;
+        } 
+        else{
+            /* continue moving through the list */
+            prev = cur;
+            cur = cur->next;
         }
     }
+    return prev;
+}
 
-    return success;
+void addvalue(struct List* list, int val){
+    if(!list) return;
+    /* construct and initialize new node */
+    struct Node* newnode = (struct Node*) malloc(sizeof(struct Node*));
+    printf("malloc: %p\n", newnode);
+    newnode->val = val;
+    newnode->next = NULL;
+
+    /* locate the node in the current list that will proceed newnode */
+    struct Node* prev = findprev(list, val);
+    if(prev){
+        /* the new node does not belong at the head of list */
+        /* option to eliminate duplicates - uncomment next line */
+        /* if(prev->val == val) return; */
+        newnode->next = prev->next;
+        prev->next = newnode;
+    }else{
+        /* the new node belongs at head of list */
+        newnode->next = list->head;
+        list->head = newnode;
+    }
+    list->size += 1;
+}
+
+void removevalue(struct List* list, int val){
+    if(!list || !list->head) return;
+    struct Node* cur = list->head;
+    struct Node* prev = NULL;
+    while(cur){
+        if(cur->val == val){
+            if(prev){
+                prev->next = cur->next;
+                free(cur);
+            }else{
+                /* node to remove is head */
+                list->head = list->head->next;
+                free(cur);
+            }
+            list->size -= 1;
+            break;
+        }else{
+            prev = cur;
+            cur = cur->next;
+        }
+    }
 }
 
 void printlist(struct List* list){
     if(!list) return;
+    printf("list size: %i\n", list->size);
     struct Node* cur = list->head;
     printf("head -> ");
     while(cur){
@@ -78,6 +97,7 @@ void printlist(struct List* list){
 }
 
 int main() {
+
     struct List* l = createlist();
     addvalue(l, 1);
     addvalue(l, 3);
@@ -91,5 +111,12 @@ int main() {
         }
     }
     printlist(l);
-    return 0;
+
+    for(int i = 0; i<100; i++){
+        if(rand()%2){
+            removevalue(l,i);
+        }
+    }
+    printlist(l);
+    return 0; 
 }

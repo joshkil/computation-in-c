@@ -2,12 +2,21 @@
 #include <math.h>
 
 #define SALES_TAX_RATE 0.09
-#define LODGING_TAX 15.99
+#define SERVICE_FEE 15.99
 
 int main(){
 
+    /* Floating Point Examples */
+
+    float price = 1.999e1; /* 19.99 in exponential notation 1.999 X 10^1 */
+    printf("price: %f\n", price);
+
+    float smallvalue = 1.3e-10; /* .00000000013 in exponential notation 1.3 X 10^-10 */
+    printf("smallvalue: %.11f\n", smallvalue);
+
     /* 
-     * Calculate the final price for a hotel room with taxes and fees. 
+     * Calculate the final price for a hotel room with taxes and fees. In the code below, 
+     * we calculate the final price of a hotel by adding tax and a service fee. 
      */
 
     float basecost = 149.00; 
@@ -29,7 +38,7 @@ int main(){
      * Look how using constants can clarify the code. 
      */
 
-    total = basecost + (basecost * SALES_TAX_RATE) + LODGING_TAX;
+    total = basecost + (basecost * SALES_TAX_RATE) + SERVICE_FEE;
     printf("Total Hotel Cost = $%.2f\n", total);
 
     return 0;

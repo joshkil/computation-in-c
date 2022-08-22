@@ -35,6 +35,7 @@
  */
 
 int main(void){
+
     /* delare variables to hold the left operand, right operand, and answer */
     int lop = 0;
     int rop = 0;

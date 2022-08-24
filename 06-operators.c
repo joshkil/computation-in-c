@@ -1,5 +1,16 @@
 #include <stdio.h>
 
+/*
+ * This program provides example usages of the c languages operators. The program 
+ * reviews: 
+ *      assignment = 
+ *      math * / % + -
+ *      math & assignment combos += -= *= /= %=
+ *      variable incrementation ++ -- 
+ *      comparison < > <= >= == !=
+ *      logial && || !
+ */
+
 int main(){
 
     /* 

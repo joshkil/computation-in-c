@@ -11,6 +11,10 @@
  *            2 and 4,294,967,295 - the max value of 4 byte unsigned int (2^32); 
  * 
  * Below is a solution to the challenge. How did you do? 
+ * 
+ * OUTPUT: 100.00% Complete
+ * Between 1 and 4294967295, there are 203280221 prime numbers!
+ * The largest prime number is 4294967291!
  */
 
 int main(){
@@ -24,9 +28,12 @@ int main(){
     unsigned int max = 4294967295;
 
     /*
-     * Start a for-loop that will run between i = 2 and i = 4,294,967,295. 
+     * Start a for-loop that will run between i = 2 and i = 4,294,967,295. Be careful
+     * since you need to go all the way to the max value, your iterator variable needs to be
+     * large enough to hold 2^32 + 1. That means you need a "long" variable (8 bytes, 64 bits), 
+     * otherwise, i will overflow before reaching "max" and the program will never end. 
      */
-    for(unsigned int i = 2; i <= max; i++){
+    for(unsigned long i = 2; i <= max; i++){
         /* 
          * All numbers are divisible by 1 and by themselves. We want to see 
          * if there is any other number that will evenly divide into i; 
@@ -53,7 +60,7 @@ int main(){
          */
         if(i % 10000 == 0){
             system("clear");
-            printf("%7.4f%% Complete", 100.0 * ( (double)i / (double)max) );
+            printf("%4.2f%% Complete", 100.0 * ( (double)i / (double)max) );
             fflush(stdout);
         } 
 
@@ -78,7 +85,7 @@ int main(){
          *      a * b > i 
          */ 
 
-        for (unsigned int j = 2; j <= sqrt(i); j++){
+        for (unsigned long j = 2; j <= sqrt(i); j++){
             if(i % j == 0){
                 isprime = 0;
                 break; /* the break statement stops the loop */ 
@@ -98,7 +105,7 @@ int main(){
         }
     }
 
-    printf("Between 1 and %u, there are %i prime numbers!\n", max, numofprimes);
+    printf("\nBetween 2 and %u, there are %u prime numbers!\n", max, numofprimes);
     printf("The largest prime number is %u!\n", largestprime);
 
     return 1;

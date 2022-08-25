@@ -10,7 +10,7 @@ If you want a comprehensive journey through basic programming, here is a list of
 ### History and Foundations of Computation
 
   1. [Computation Before the 20th Century](https://www.youtube.com/watch?v=RHjyzlwFDT0)
-  2. [Computation After in 20th Century](https://www.youtube.com/watch?v=2xFPxYGf3gQ)
+  2. [Computation in 20th Century](https://www.youtube.com/watch?v=2xFPxYGf3gQ)
   3. [The Binary Number System](https://www.youtube.com/watch?v=NFqy8ZZ7iKc)
 
 ### Introduction to Programing in C 

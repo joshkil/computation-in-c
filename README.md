@@ -13,6 +13,7 @@ If you want a comprehensive journey through basic programming, here is a list of
   2. [Computation After in 20th Century](https://www.youtube.com/watch?v=2xFPxYGf3gQ&t=126s)
   3. [The Binary Number System](https://www.youtube.com/watch?v=NFqy8ZZ7iKc&t=10s)
 
-### Programing in C 
+### Introduction to Programing in C 
 
-  1. 
+  1. [Environment Setup](https://www.youtube.com/watch?v=QlhDBm7COrY&list=PLB-_ub_3RGMcYYYgiQdYjzx4LTTwdTf2X&index=1&t=153s)
+     - [Setup Guide](https://docs.google.com/document/d/1WGW3TSyRzd55gU1mlX_uKuDbopah40Xyq3jR9PdzK9E/edit?usp=sharing)

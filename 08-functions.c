@@ -2,7 +2,7 @@
 
 /*
  * In this program we take a look at defining functions. We define two functions and then 
- * use them in the main function to simplify our code. 
+ * use them in the main program (also a function called 'main') to simplify our code. 
  */
 
 
@@ -64,28 +64,28 @@ int main(){
      */
 
     if(width_lamp <= width_box1 && 
-       length_lamp <= width_box1 &&
+       length_lamp <= length_box1 &&
        depth_lamp <= depth_box1){
 
         printf("Your lamp will fit into box 1\n");
     }
 
     if(width_lamp <= width_box2 && 
-       length_lamp <= width_box2 &&
+       length_lamp <= length_box2 &&
        depth_lamp <= depth_box2){
 
         printf("Your lamp will fit into box 2\n");
     }
 
     if(width_lamp <= width_box3 && 
-       length_lamp <= width_box3 &&
+       length_lamp <= length_box3 &&
        depth_lamp <= depth_box3){
 
         printf("Your lamp will fit into box 3\n");
     }
 
     /* 
-     * What do you think of the code above? It was a little tideous to write, 
+     * What do you think of the code above? It was a little tideous to write and read, 
      * and it repeats the exact same statements 3 times: 
      * 
      *      if(width_lamp <= width_boxN && 
@@ -96,15 +96,15 @@ int main(){
      *      }
      * 
      * This is a great example of when defining a function can 
-     * help us simplify our code and reduce the repetition in our statements.
+     * help us simplify our code and reduce repetition in our program.
      * In the next lines, we re-write this code using our function 
      * will_it_fit(). 
      * 
-     * Notice that we define a variable "itfits" which is in the scope of the main function. 
+     * Notice that we define a variable 'itfits' which is in the scope of the main function. 
      * We also defined a variable with this name in the scope of the will_if_fit function. 
      * These two variable are not related from the perspective of the computer. They are in 
-     * differnt scope and do not affect one another. The only reason the variable itfits which
-     * is local to main ends up with the same value as the variable it fits which is local to 
+     * differnt scopes and do not affect one another. The only reason the variable 'itfits', 
+     * which is local to main ends up with the same value as the variable 'itfits' in 
      * the function will_it_fit is because we assign the return value of the function to our 
      * local itfits variable in the main function. 
      * 

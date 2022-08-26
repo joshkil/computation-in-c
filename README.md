@@ -32,3 +32,5 @@ If you want a comprehensive journey through basic programming, here is a list of
       - [07-Program Challenge Solution](https://www.youtube.com/watch?v=AIgTD8xNb_o)
       - Program [07-flow-of-control.c](./07-flow-of-control.c)
       - Challenge Solution [07-challenge.c](./08-challenge.c)
+  8. [Functions](https://youtu.be/v18IWVc6z_o)
+      - program [08-functions.c](./08-functions.c)

@@ -24,10 +24,11 @@
 /* 
  * BASIC PRINTF REFERENCE 
  *   printf("%<format-string>", <variable-name>);
- *     - <format-string> starts with '%' and then uses one of the following: 
- *          c - print a character
- *          i - print an integer
- *          f - print a floating point number
+ *     - <format-string> uses one of the following: 
+ *          %c - print a character
+ *          %i - print an integer
+ *          %f - print a floating point number
+ *          \n - print a new line (a return)
  *     - <variable-name> is a previously defined variable. Don't use '&'!
  *  
  *   The function will print to the screen the value in the 

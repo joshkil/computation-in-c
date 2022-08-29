@@ -1,6 +1,7 @@
 #include <stdio.h>
 
 /*
+ * Program 08 : Functions
  * In this program we take a look at defining functions. We define two functions and then 
  * use them in the main program (also a function called 'main') to simplify our code. 
  */

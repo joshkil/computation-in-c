@@ -1,6 +1,7 @@
 #include <stdio.h>
 
 /*
+ * Program 05 : Input and Output
  * This is a simple calculator that adds two numbers. 
  * We practice using the scanf and printf functions to read and
  * write data from the screen. In the computing field, we call this 

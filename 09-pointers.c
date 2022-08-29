@@ -1,6 +1,13 @@
 #include <stdio.h>
 
 /*
+ * Program 09 : Pointers
+ * This program shows examples of how to define, initialize, dereference, 
+ * and pass pointers to functions of a c-program. 
+ */
+
+
+/*
  * Define a function to receive an integer passed-by-value. Increase the value of the 
  * local integer by one and return its value. 
  */

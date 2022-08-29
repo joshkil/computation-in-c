@@ -4,6 +4,11 @@
 #define SALES_TAX_RATE 0.09
 #define SERVICE_FEE 15.99
 
+/* 
+ * Program 04 : Constants
+ * In this program we show examples of how to define and use constants. 
+ */
+
 int main(){
 
     /* Floating Point Examples */

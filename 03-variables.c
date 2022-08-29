@@ -4,6 +4,7 @@
 #include <math.h> 
 
 /*
+ * Program 03 : Variables 
  * This program helps you understand how to declare variables in the c language. 
  * This program helps us visualize the size of various integer variable types in memory. 
  * We use the maximum and minimum values of each type from limits.h to calculate

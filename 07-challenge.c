@@ -3,6 +3,7 @@
 #include <math.h>
 
 /* 
+ * Program 07 : Challenge "Count Prime Numbers to 4 Billion"
  * This is a challenge program in from the computing foundations channel. It
  * is designed to help you practice variable types, math operators, 
  * comparison operators, and flow of control. 

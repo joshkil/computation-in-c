@@ -1,6 +1,7 @@
 #include <stdio.h>
 
 /*
+ * Program 06 : Operators
  * This program provides example usages of the c languages operators. The program 
  * reviews: 
  *      assignment = 

@@ -58,3 +58,4 @@ dkms.conf
 # Other stuff
 .vscode
 .DS_Store
+test.c

@@ -41,6 +41,12 @@ If you want a comprehensive journey through basic programming, here is a list of
       - [10-Program Challenge Solution Explained](https://www.youtube.com/watch?v=-0rGjdL0_NU)
       - Challenge Solution [10-challenge.c](./10-challenge.c)
  11. [Pointer Arithmetic](https://youtu.be/tMNgEW68Gas)
-      - Program [10-arrays.c](./11-pointer-arithmetic.c)
+      - Program [11-pointer-arithmetic.c](./11-pointer-arithmetic.c)
       - [11-Program Challenge Solution Explained](https://youtu.be/aGOuLbUtpek) 
       - Challenge Solution [11-challenge.c](./11-challenge.c)
+ 12. [Strings](https://youtu.be/UBAQc0K63Y0)
+      - Program [12-strings.c](./12-strings.c)
+      - [12-Program Challenge Solution Explained]() 
+      - Challenge Solution [12-challenge.c](./12-challenge.c)
+
+

@@ -47,7 +47,13 @@ If you want a comprehensive journey through basic programming, here is a list of
  12. [Strings](https://youtu.be/y0__ura2BNE)
       - Program [12-strings.c](./12-strings.c)
  13. [Multi-dimensional Arrays](https://youtu.be/ewoDrFZ9Gf8)
+      - Program [13-multidimensional-arrays.c](./13-multidimensional-arrays.c)
       - [13-Program Challenge Solution Explained](https://youtu.be/tKk5EJI7nQ4) 
       - Challenge Solution [13-challenge.c](./13-challenge.c)
+ 14. [Structures & Enumerations](https://youtu.be/niFM10068TU)
+      - Program [14-structures.c](./14-structures.c)
+      - [14-Program Challenge Solution Explained]() 
+      - Challenge Solution [14-challenge.c](./14-challenge.c)
+
 
 

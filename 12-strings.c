@@ -18,7 +18,9 @@ void printmem (char s[], int size){
     printf(" Idx      Mem      Adr\n");
     printf("      ------------\n");
     for(int i = 0; i < size; i++){
-        printf("[%03i] | 0x%02x (%1c) |   %p \n", i, s[i], s[i], &s[i]);
+        printf("[%03i] | 0x%02x (%1c) |   %p \n", i, 
+            (unsigned char) s[i], 
+            (unsigned char) s[i], &s[i]);
         printf("      ------------\n");
     }
     printf("\n");

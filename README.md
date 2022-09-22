@@ -52,7 +52,7 @@ If you want a comprehensive journey through basic programming, here is a list of
       - Challenge Solution [13-challenge.c](./13-challenge.c)
  14. [Structures & Enumerations](https://youtu.be/niFM10068TU)
       - Program [14-structures.c](./14-structures.c)
-      - [14-Program Challenge Solution Explained](https://youtu.be/5pUr6C8M5H4) 
+      - [14-Program Challenge Solution Explained](https://youtu.be/Ndu9BIq5ng0) 
       - Challenge Solution [14-challenge.c](./14-challenge.c)
 
 

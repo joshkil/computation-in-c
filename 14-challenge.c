@@ -4,17 +4,23 @@
 /* 
  * Challenge 13 : Write a program to store and display a simple addressbook. 
  * The program allows users to add new entires to the address book and to
- * display the addressbook. 
+ * display the addressbook. This is similar to program challenge 13, but I use
+ * a structure to hold each entry of the phone book. 
  * 
- * Each entry in the addressbook is a firstname, lastname, and phone number. 
+ *  https://github.com/joshkil/computing-foundations/blob/main/13-challenge.c
+ * 
+ * Each entry in the addressbook is a firstname, lastname, phone number, and
+ * a type (family, friend , work). 
+ * 
  * The phonebook supports 100 entires, firstnames up to 15 characters,
- * lastnames up to 20 characters, and phone numbers  up to 16 characters. 
+ * lastnames up to 20 characters, phone numbers  up to 16 characters, and an
+ * entry type of (family, friend, work). 
  * 
- * The program has three commands the user can enter: 
+ * The program has four commands the user can enter: 
  * 
  *    'a' = add an entry
  *    'd' = display phone book
- *    'm' = display memory for a selected region
+ *    'm' = display memory for a selected entry (zero indexed)
  *    'q' = quit the program
  */
 
@@ -27,6 +33,12 @@
 #define MEMORY_OP 'm'
 #define QUIT_OP 'q'
 
+/* Below, I define an enum and a constant two-dimensional array of 
+ * strings which represent a string represntation for each value of the 
+ * enum. This is a common technique that allows you to use an enum in your
+ * data and then print out the value as a string by simply using the statement
+ *         ENTRY_TYPES_NAMES[<enum_val>]
+ */
 enum Entrytype {family, friend, work};
 const char ENTRY_TYPE_NAMES[3][10] = 
     {"family", "friend", "work"};

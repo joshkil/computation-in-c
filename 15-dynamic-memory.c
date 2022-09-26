@@ -9,7 +9,7 @@
  * as well as structures. Dynamic memory will be used frequently as we learn about
  * data structures. It can be a little confusing at first; so, spend some time 
  * on this and stay with it until you understand. 
- * /
+ */
 
 int main (void){
 

@@ -64,7 +64,7 @@ struct Phonebook {
  * number of entries in the phonebook. 
  *
  */
-void printpb(struct Phonebook* pb){
+void printpb(const struct Phonebook* pb){
 
     /* Set-up a loop to run through the current number of entries */
     for(int i = 0; i < pb->size; i++){

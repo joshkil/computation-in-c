@@ -101,7 +101,6 @@ int main(){
      */
 
     /* 
-     * Arrays are Pointers! 
      * So far we've seen that I can increase the address stored in a pointer
      * by the size of the data type of the pointer simply by adding 1 to the 
      * pointer. 
@@ -113,12 +112,15 @@ int main(){
      */
 
     /* 
+     * Array Names are converted to Pointers in Many Cases! 
      * Each statement below is quivalent. 
-     * This means that referencing an index of an array is the same as doing 
+     * This means that referencing an index of an array gets the same result as doing 
      * pointer arithmetic on the address of the first element of an array. 
-     * In the final 2 statement we see that the name of an array IS a pointer
-     * and array style indexes can be applied to pointers. Or said another way, 
-     * a pointer to the address of the first element of an array IS an array!  
+     * In the final 2 statement we see that the name of an array IS converted to a 
+     * pointer and array style indexes can be applied to pointers. Or said another way, 
+     * we can use the square bracket notation with a pointer and the compiler converts
+     * that into the appropriate pointer arithmetic and dereferences the pointer for us
+     * all in one step.   
      */ 
     a10[5] = 100;
     printf("a100[5] = %i (expect 100)\n", a10[5]);

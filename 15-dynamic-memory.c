@@ -36,18 +36,25 @@ int main (void){
     int* mymem = malloc(sizeof(int) * 20);
     if(!mymem) exit(1);
 
+    /* Loop through the array setting each element to it's index value */
     for(int i = 0; i < 20; i++){
         mymem[i] = i;
 
         /* 
+         * In the next block of code, I will increment each element by its own
+         * value using two different forms for referencing the elements. 
          * A 1D array name decays (converts) to a pointer of the type of the 
-         * array (int*) 
+         * array (int*). This allows me to use the name of the array like it was
+         * a pointer and do pointer arithmetic (mymem + i). On the left-hand-side
+         * of this equality statement, I use pointer arithmetic and on the right-hand
+         * side, I use traditional bracket notation. Both are valid. 
          */
         *(mymem + i) += mymem[i]; 
     }
 
+    /* print out 10 element of the array per line */
     for(int i = 0; i < 20; i++){
-        if(i % 5 == 0) printf("\n");
+        if(i % 10 == 0) printf("\n");
         printf("%2i ", mymem[i]);
     }
     printf("\n\n");
@@ -108,15 +115,52 @@ int main (void){
             matrix[i][j] += *(&matrix[0][0] + (i * 5) + j);
 
             /* 
-             * Why do I need two * (pointer dereference) operators below? 
-             * A 2d array name decays to a pointer to an array of integers 
-             * int*[]. This is a little mind bendy. It's like saying the name of 
-             * a multidimensional array just converts to another array. We need
-             * to de-reference it once to get the address of the first element 
-             * of the first array, then we preform pointer math, then we finally
-             * dereference again to get the integer.  
+             * In this next statement, I will increment the [i][j] element 
+             * by itself. On the left-hand-side I use the normal square bracket
+             * notation, on the right-hand-side, I use pointer arithmetic which 
+             * merits an explaination. 
+             * 
+             * Multi-dimensional arrays are best thought of as "arrays of arrays". 
+             * The name of the array converts into a pointer to an array. This is 
+             * different than a pointer to the first element of an array. The notation 
+             * is : 
+             *             int (*ptr)[] - a pointer to an integer array
+             * 
+             * To me, that notation looks really wierd; so, I prefer to write it like: 
+             *            
+             *             (int[])* ptr - incorrect notation, but feels like a more 
+             *                            logical way to write "pointer to array"
+             * 
+             * When you do pointer arithmatic on a pointer to an array, you increase
+             * the address by the size of the array. So, in my 5X5 matrix, the name 
+             * of the matrix is a pointer to the first array of 5 integers. If I add
+             * 1 to that pointer, I advance the address by 
+             * 
+             *           5 * sizeof(int) = 20 bytes
+             * 
+             * This move the pointer past the first array (the first row) and points it 
+             * to the second array (the second row) in the array of arrays. 
+             * 
+             * Now, when I dereference a pointer to an array, I end up with a 1D array,
+             * and as I've said before the "name" of a 1D array gets converted into 
+             * a pointer to the first element of the array. If I add 1 to a pointer 
+             * to an integer, I increase the address by sizeof(int). When I dereference
+             * a pointer to an integer, I end up with an integer. 
+             * 
+             * Step by Step: 
+             * 
+             *        matrix is an address to the first array of integers in the 5X5 matrix
+             * 
+             *        A = (matrix + i) - add i * 5 * sizeof(int) to address
+             *                         - A is an (int[])*, a pointer to an array
+             *        B = *(A)         - dereference the pointer to the array
+             *                         - B is an int*
+             *        C = B + j        - add j * sizeof(int) to address
+             *                         - C is an int*
+             *        D = *(C)         - dereference the int pointer to get an integer
+             *                         - D is an integer
              */
-            matrix[i][j] += *(*matrix + (i * 5) + j); 
+            matrix[i][j] += *(*(matrix + i) + j); 
         }
     }
 

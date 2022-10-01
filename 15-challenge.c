@@ -8,30 +8,34 @@
 
 
 /*
- * Challenge 16 : Create an application that will read input from the keyboard until
- * the user types a 'q' on a single line followed by return. Store the user's input 
- * into a dynamically allocated character array. Print statistics for size of input, 
- * size of storage, and word count in the string. 
+ * Challenge 16 : Create an application to read input from the keyboard until
+ * the user types a 'q' (quit) on a single line followed by return. Store the user's input 
+ * into a dynamically allocated character array. After the user enters 'q' to quit, print 
+ * statistics about the input to the screen. Print the size of input, size of storage array, 
+ * and word count in the string. 
+ * 
+ * HINT: Computing word-count is a little tricky; so, enjoy solving this part of the 
+ * problem last. 
  */ 
 
 /*
- * char* firstwhitespace(char* str) - for a null terminated string pointed to 
+ * char* nextwhitespace(char* str) - for a null terminated string pointed to 
  * by str, return a pointer to the first occurrence of whitespace. 
  * 
  * Whitespace is defined as a space or newline.
  */
-char* firstwhitespace(char* str){
+char* nextwhitespace(char* str){
 
     if(!str) return NULL;
 
-    /* use strchr function to fine the first space and new line in str if they exist */
+    /* use strchr function to find the first space and new line in str if they exist */
     char* nextspace = strchr(str, ' ');
     char* nextnl = strchr(str, '\n');
 
     /* 
      * There are three options: 1) we found both a space and a newline, 2) we found only
      * one, or 3) we found neither. If we found both, we return the one that occurred 
-     * first. You know a character occurred before another in a string if it pointer
+     * first. You know a character occurred before another in a string if its pointer
      * address is smaller. 
      */
     if(nextspace && nextnl){
@@ -44,27 +48,31 @@ char* firstwhitespace(char* str){
 }
 
 /*
- * int wrdcnt(char* str) - count the words in a string null terminated string. 
+ * int wrdcnt(char* str) - count the words in a null terminated string. 
  * 
  * This function assumes that a word is any letter or symbol surrounded by whitespace. 
- * Whitespace is defined as a space or newline. This is a little naive, because it will 
- * cound punctuation as a word if it stands alone surrounded by whitespace. 
+ * Whitespace is defined as a space or newline. 
+ * 
+ * NOTE: The algorithm I use is a little naive, because it will count punctuation 
+ * as a word if it stands alone surrounded by whitespace. 
  */
 int wrdcnt(char* str){
     if(!str) return 0;
     int wordcount = 0; 
 
-    /* we set up two pointers. one holds the current whitespace found and the 
+    /* 
+     * we set up two pointers. one holds the current whitespace found and the 
      * other holds the prior whitespace found. 
      */
     char* curwspace = str;
     char* prevwspace = str;
 
-    while( (curwspace = firstwhitespace(curwspace)) != NULL ){
+    while( (curwspace = nextwhitespace(curwspace)) != NULL ){
         /* 
          * The next statement helps us avoid counting a string of 
          * whitespaces as words. We reuire that the currently found 
-         * whitespace be separated from the previously found whitespace.
+         * whitespace be separated from the previously found whitespace
+         * by some non-whitespace character
          */ 
         if((curwspace - 1) != prevwspace) wordcount++;
         prevwspace = curwspace;
@@ -89,7 +97,7 @@ int main(void){
     /* 
      * We will execute an infinite loop until the user enters a 'q' on a single line. 
      * As we read input from the user into our buffer, we will add it to our storage
-     * area. If we need more space, we will allocate a new larger space, copy over 
+     * array. If we need more space, we will allocate a new larger array, copy over 
      * the existing data we have stored, and proceed. 
      */
     while(1){
@@ -132,7 +140,9 @@ int main(void){
         /* 
          * We advance the storage tail variable to the array index just after the 
          * last of the user input. We set that location to the null character to 
-         * terminate the string. 
+         * terminate the string. The variable stortail will always hold the index 
+         * where the new buffer of user input will be stored. The "tail" represents
+         * the end of our current string in storage. 
          */
         stortail += stringlen;
         stor[stortail] = '\0';

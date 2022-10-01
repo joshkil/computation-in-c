@@ -8,7 +8,7 @@
 
 
 /*
- * Challenge 16 : Create an application to read input from the keyboard until
+ * Challenge 15 : Create an application to read input from the keyboard until
  * the user types a 'q' (quit) on a single line followed by return. Store the user's input 
  * into a dynamically allocated character array. After the user enters 'q' to quit, print 
  * statistics about the input to the screen. Print the size of input, size of storage array, 

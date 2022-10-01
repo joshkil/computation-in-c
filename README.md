@@ -56,7 +56,7 @@ If you want a comprehensive journey through basic programming, here is a list of
       - Challenge Solution [14-challenge.c](./14-challenge.c)
  15. [Dynamic Memory](https://youtu.be/zesiwnKVkW8)
       - Program [15-structures.c](./15-dynamic-memory.c)
-      - [15-Program Challenge Solution Explained]() 
+      - [15-Program Challenge Solution Explained](https://youtu.be/DPTuzLZuf_c) 
       - Challenge Solution [15-challenge.c](./15-challenge.c)
 
 

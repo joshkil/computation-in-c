@@ -58,5 +58,5 @@ If you want a comprehensive journey through basic programming, here is a list of
       - Program [15-structures.c](./15-dynamic-memory.c)
       - [15-Program Challenge Solution Explained](https://youtu.be/DPTuzLZuf_c) 
       - Challenge Solution [15-challenge.c](./15-challenge.c)
-
-
+ 16. [File Input and Output](https://youtu.be/WrHN7whh7pc)
+      - Program [16-files.c](./16-files.c)
